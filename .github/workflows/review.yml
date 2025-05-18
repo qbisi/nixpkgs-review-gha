@@ -160,6 +160,8 @@ jobs:
             || true
         env:
           GITHUB_TOKEN: ${{ github.token }}
+        timeout-minutes:
+          1440
 
       - name: push results to cache
         if: ${{ inputs.push-to-cache && ((vars.ATTIC_SERVER != '' && vars.ATTIC_CACHE != '') || vars.CACHIX_CACHE != '') }}
